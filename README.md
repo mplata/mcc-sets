@@ -5,3 +5,5 @@ Implementación de las operaciones de conjuntos utilizando colecciones.
 
 ## Alumnos:
 - Luis Marcos Plata Delgado
+
+![alt text](https://raw.githubusercontent.com/mplata/mcc-sets/master/sets.jpg)
