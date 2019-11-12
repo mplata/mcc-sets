@@ -14,25 +14,29 @@ public class Main {
 		Integer[] integers = {1,4,7,2,1,9};
 		Integer[] universe = {1,2,3,4,5,6,7,8,9};
 		
-		
+		Conjunto<String> empty = new Conjunto<String>();
 		Conjunto<String> set = new Conjunto<String>(data);
 		Conjunto<String> set2 = new Conjunto<String>(data2);
-		Conjunto<String> union = set.union(set2);
-		Conjunto<String> intersection = set.intersection(set2);
-		Conjunto<String> diff = set.difference(set2);
-		
 		Conjunto<Integer> integersSet = new Conjunto<Integer>(integers);
 		Conjunto<String> igual = new Conjunto<String>(data);
 		Conjunto<Integer> universeSet = new Conjunto<Integer>(universe);
+		
+		Conjunto<String> union = set.union(set2);
+		
+		System.out.println("Conjunto 1: "+set);
+		System.out.println("Conjunto 2: "+set2);
+		System.out.println("Union:"+union);
+
+		Conjunto<String> intersection = set.intersection(set2);
+		Conjunto<String> diff = set.difference(set2);
+		
 		Conjunto<Conjunto.Par<String,String>> product = set.productC(set2);
 		
 		Conjunto<Par<String, Integer>> productMixed = set.productC(integersSet);
 		Conjunto<Integer> complement = integersSet.complement(universeSet);
 		
 		Conjunto<Conjunto<String>> pow = set.pow();
-		System.out.println("Conjunto 1: "+set);
-		System.out.println("Conjunto 2: "+set2);
-		System.out.println("Union:"+union);
+		
 		System.out.println("Diferencia: "+diff);
 		System.out.println("intersection: "+intersection);
 		System.out.println("Producto: "+product);
@@ -41,8 +45,11 @@ public class Main {
 		System.out.println("igualdad: "+set.equals(igual));
 		System.out.println(set);
 		System.out.println("Conjunto potencia="+pow);
-		Conjunto clone = (Conjunto) set.clone();
+		set.add("Marcos");
+		Conjunto<String> clone = (Conjunto<String>) set.clone();
+		System.out.println("Conjunto 1: "+set);
 		System.out.println("Clonado "+clone);
+		System.out.println("conjunto vacio "+empty+" subconjunto de "+set+" = "+set.subset(empty));
 	}
 
 }
